@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <!--Chrome Developer tools. Mac: Alt+Cmd+i. Windows:Ctrl+Alt+i-->
+    <head>
+        <meta charset="utf-8">
+        <title>The basics of HTML</title>
+    </head>
+    <body>
+        <header>Company logo, tag line, etc. Some header info</header>
+        <nav>Navigation</nav>
+        <h1>Apuntes de HTML</h1>
+        <ol>
+            <li>Lista numerada</li>
+            <li>La lista no numerada es ul:
+                <ul>
+                    <li>Ojo como se programa una lista en otra lista.</li>
+                    <li>Numero 2</li>
+            </ul>
+            <li>Continua normal.</li>
+        </ol>
+        <h2>Esto es una prueba de salto de pagina sin br.</h2>
+        <h2>Vamos a ver la segunda prueba de salto de pagina sin br.</h2>
+        <h2 style="color: red;">Es mejor usar h1...h6 que div porque HTML es solo estructura, en CSS le daremos vida.</h2>
+        <section id="section1">
+            <h2>Section 1</h2>
+            <article><h3>Articulo 1</h3></article>
+            <article><h3>Articulo 2</h3></article>
+            <article><h3>Articulo 3</h3></article>
+        </section>
+        <aside>Da informacion sobre el main topic. Por ejemplo: post relacionados</aside>
+        <section><h4>Character Entity References:</h4>
+            <ul>
+                <li><h5>Si queremos printear los simbolos usamos &lt; &gt; &amp; &copy;  </h5></li>
+                <li><h5>Victory&nbsp;nor&nbsp;defeat: Este caracter hace que no se rompa la linea.</h5></li>
+                <li><h5>&quot;Para mostrar los caracteres en Encode diferente a UTF8 usamos las entity references.&quot;</h5></li>
+            </ul>
+        </section>
+        <section>
+            <h4>Imagenes. Siempre establecer tamaño con width y height porque el navegador sabe el tamaño exacto de la imagen y asi le es mas facil cargar</h4><br>
+            <img src="https://cdn.pixabay.com/photo/2018/02/13/23/41/nature-3151869_960_720.jpg" width="640" height="480" alt="Esto se usa por si hay personas discapacitadas, para que sepan que es la imagen"><br>
+            <h5>Link Externo</h5><br>
+            <p>
+            <img src="picture-with-quote.jpg" width="400" height="235" alt="Picture with a quote"><br>
+            </p>
+            <h5>Link Interno.</h5>
+        </section>
+        <section><h4>Links:</h4>
+            <ul>
+                <li><a href="same-directory.html" title="Mismo directorio">Linkeado al mismo directorio.</a></li>
+                <li><a href="same-directory.html" title="Mismo directorio">
+                    <div>No usar DIV porque crea una region enorme donde cliclar, mostrado aqui con el tittle.</div>
+                </a></li>
+                <li><a href="http://www.20minutos.com" target="_blank">Esto es un Link externo. El target: _blank fuerza al navegador a abrir una pestaña.</a></li>
+                <li><a href="#section1" title="Section 1">Linkea con una ID del HTML.</a></li>
+            </ul>
+        </section>
+
+        <footer>Copyright 2005 &copy;</footer>
+    </body>
+</html>
