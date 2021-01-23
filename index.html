@@ -1,60 +1,30 @@
 <!doctype html>
 <html lang="en">
-    <!--Chrome Developer tools. Mac: Alt+Cmd+i. Windows:Ctrl+Alt+i-->
-    <head>
+   <head>
         <meta charset="utf-8">
-        <title>The basics of HTML</title>
+        <title>The basics of CSS</title>
+        <style>
+            
+        </style>
     </head>
     <body>
-        <header>Company logo, tag line, etc. Some header info</header>
-        <nav>Navigation</nav>
-        <h1>Apuntes de HTML</h1>
-        <ol>
-            <li>Lista numerada</li>
-            <li>La lista no numerada es ul:
-                <ul>
-                    <li>Ojo como se programa una lista en otra lista.</li>
-                    <li>Numero 2</li>
-            </ul>
-            <li>Continua normal.</li>
-        </ol>
-        <h2>Esto es una prueba de salto de pagina sin br.</h2>
-        <h2>Vamos a ver la segunda prueba de salto de pagina sin br.</h2>
-        <h2 style="color: red;">Es mejor usar h1...h6 que div porque HTML es solo estructura, en CSS le daremos vida.</h2>
-        <section id="section1">
-            <h2>Section 1</h2>
-            <article><h3>Articulo 1</h3></article>
-            <article><h3>Articulo 2</h3></article>
-            <article><h3>Articulo 3</h3></article>
-        </section>
-        <aside>Da informacion sobre el main topic. Por ejemplo: post relacionados</aside>
-        <section><h4>Character Entity References:</h4>
-            <ul>
-                <li><h5>Si queremos printear los simbolos usamos &lt; &gt; &amp; &copy;  </h5></li>
-                <li><h5>Victory&nbsp;nor&nbsp;defeat: Este caracter hace que no se rompa la linea.</h5></li>
-                <li><h5>&quot;Para mostrar los caracteres en Encode diferente a UTF8 usamos las entity references.&quot;</h5></li>
-            </ul>
-        </section>
-        <section>
-            <h4>Imagenes. Siempre establecer tamaño con width y height porque el navegador sabe el tamaño exacto de la imagen y asi le es mas facil cargar</h4><br>
-            <img src="https://cdn.pixabay.com/photo/2018/02/13/23/41/nature-3151869_960_720.jpg" width="640" height="480" alt="Esto se usa por si hay personas discapacitadas, para que sepan que es la imagen"><br>
-            <h5>Link Externo</h5><br>
-            <p>
-            <img src="book-863418_960_720.jpg" width="400" height="235" alt="Picture with a quote"><br>
-            </p>
-            <h5>Link Interno.</h5>
-        </section>
-        <section><h4>Links:</h4>
-            <ul>
-                <li><a href="same-directory.html" title="Mismo directorio">Linkeado al mismo directorio.</a></li>
-                <li><a href="same-directory.html" title="Mismo directorio">
-                    <div>No usar DIV porque crea una region enorme donde cliclar, mostrado aqui con el tittle.</div>
-                </a></li>
-                <li><a href="http://www.20minutos.com" target="_blank">Esto es un Link externo. El target: _blank fuerza al navegador a abrir una pestaña.</a></li>
-                <li><a href="#section1" title="Section 1">Linkea con una ID del HTML.</a></li>
-            </ul>
-        </section>
-
-        <footer>Copyright 2005 &copy;</footer>
+       <h1 id="Encabezado">The basics of CSS</h1>
+       <h2>Subtitulo</h2>
+       <section id="Contenido">
+            <h3 class="TituloArticulos">Definition</h3>
+            <h4 class="ContenidoArticulos">Nuclear fusion is a reaction in which two or more atomic nuclei are combined to form one or more different atomic nuclei and subatomic particles (neutrons or protons). The difference in mass between the reactants and products is manifested as either the release or the absorption of energy. This difference in mass arises due to the difference in atomic binding energy between the nuclei before and after the reaction. Fusion is the process that powers active or main sequence stars and other high-magnitude stars, where large amounts of energy are released.</h4>
+            <h3 class="TituloArticulos">History</h3>
+            <h4 class="ContenidoArticulos">In 1920, Arthur Eddington suggested hydrogen-helium fusion could be the primary source of stellar energy. Quantum tunneling was discovered by Friedrich Hund in 1929, and shortly afterwards Robert Atkinson and Fritz Houtermans used the measured masses of light elements to show that large amounts of energy could be released by fusing small nuclei. Building on the early experiments in nuclear transmutation by Ernest Rutherford, laboratory fusion of hydrogen isotopes was accomplished by Mark Oliphant in 1932. In the remainder of that decade, the theory of the main cycle of nuclear fusion in stars was worked out by Hans Bethe. Research into fusion for military purposes began in the early 1940s as part of the Manhattan Project. Fusion was accomplished in 1951 with the Greenhouse Item nuclear test. Nuclear fusion on a large scale in an explosion was first carried out on 1 November 1952, in the Ivy Mike hydrogen bomb test.</h4>
+            <h3 class="TituloArticulos">Process</h3>
+            <h4 class="ContenidoArticulos">The release of energy with the fusion of light elements is due to the interplay of two opposing forces: the nuclear force, which combines together protons and neutrons, and the Coulomb force, which causes protons to repel each other. Protons are positively charged and repel each other by the Coulomb force, but they can nonetheless stick together, demonstrating the existence of another, short-range, force referred to as nuclear attraction.[2] Light nuclei (or nuclei smaller than iron and nickel) are sufficiently small and proton-poor allowing the nuclear force to overcome repulsion. This is because the nucleus is sufficiently small that all nucleons feel the short-range attractive force at least as strongly as they feel the infinite-range Coulomb repulsion. Building up nuclei from lighter nuclei by fusion releases the extra energy from the net attraction of particles. For larger nuclei, however, no energy is released, since the nuclear force is short-range and cannot continue to act across longer nuclear length scales. Thus, energy is not released with the fusion of such nuclei; instead, energy is required as input for such processes. Fusion powers stars and produces virtually all elements in a process called nucleosynthesis. The Sun is a main-sequence star, and, as such, generates its energy by nuclear fusion of hydrogen nuclei into helium. In its core, the Sun fuses 620 million metric tons of hydrogen and makes 616 million metric tons of helium each second. The fusion of lighter elements in stars releases energy and the mass that always accompanies it. For example, in the fusion of two hydrogen nuclei to form helium, 0.645% of the mass is carried away in the form of kinetic energy of an alpha particle or other forms of energy, such as electromagnetic radiation.[3] It takes considerable energy to force nuclei to fuse, even those of the lightest element, hydrogen. When accelerated to high enough speeds, nuclei can overcome this electrostatic repulsion and be brought close enough such that the attractive nuclear force is greater than the repulsive Coulomb force. The strong force grows rapidly once the nuclei are close enough, and the fusing nucleons can essentially "fall" into each other and the result is fusion and net energy produced. The fusion of lighter nuclei, which creates a heavier nucleus and often a free neutron or proton, generally releases more energy than it takes to force the nuclei together; this is an exothermic process that can produce self-sustaining reactions. Energy released in most nuclear reactions is much larger than in chemical reactions, because the binding energy that holds a nucleus together is greater than the energy that holds electrons to a nucleus. For example, the ionization energy gained by adding an electron to a hydrogen nucleus is 13.6 eV—less than one-millionth of the 17.6 MeV released in the deuterium–tritium (D–T) reaction shown in the adjacent diagram. Fusion reactions have an energy density many times greater than nuclear fission; the reactions produce far greater energy per unit of mass even though individual fission reactions are generally much more energetic than individual fusion ones, which are themselves millions of times more energetic than chemical reactions. Only direct conversion of mass into energy, such as that caused by the annihilatory collision of matter and antimatter, is more energetic per unit of mass than nuclear fusion. (The complete conversion of one gram of matter would release 9×1013 joules of energy.) Research into using fusion for the production of electricity has been pursued for over 60 years. Although controlled fusion is generally manageable with current technology (e.g. fusors), successful accomplishment of economic fusion has been stymied by scientific and technological difficulties; nonetheless, important progress has been made. At present, controlled fusion reactions have been unable to produce break-even (self-sustaining) controlled fusion.[4] The two most advanced approaches for it are magnetic confinement (toroid designs) and inertial confinement (laser designs). Workable designs for a toroidal reactor that theoretically will deliver ten times more fusion energy than the amount needed to heat plasma to the required temperatures are in development (see ITER). The ITER facility is expected to finish its construction phase in 2025. It will start commissioning the reactor that same year and initiate plasma experiments in 2025, but is not expected to begin full deuterium-tritium fusion until 2035.[5] Similarly, Canadian-based General Fusion, which is developing a magnetized target fusion nuclear energy system, aims to build its demonstration plant by 2025.[6] The US National Ignition Facility, which uses laser-driven inertial confinement fusion, was designed with a goal of break-even fusion; the first large-scale laser target experiments were performed in June 2009 and ignition experiments began in early 2011</h4>
+       </section>
+       <section id="BarraLateral"><h3>Vinculos</h3>
+        <ul>
+            <li><a href="#Encabezado" title="Encabezado">Inicio</a></li>
+            <li><a href="https://github.com/Incuenssu/courseratest">GitHub</a></li>
+            <li>Azucar moreno</li>
+            <li><a href="baseshtml.html">The basics of HTML</a></li>
+        </ul>
+       </section>
     </body>
 </html>
