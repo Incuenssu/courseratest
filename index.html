@@ -3,100 +3,7 @@
    <head>
         <meta charset="utf-8">
         <title id="Titulo">The basics of CSS</title>
-        <style>
-            header{
-
-            }
-            body{
-                margin: auto;
-                width: 1000px;
-                border: 3px solid green;
-                padding: 5px;
-            }
-            #Encabezado{ /*ID Selector*/
-                color: blue;
-                font-size: 50px;
-                text-align: center;
-            }
-            #Contenido{ /*ID Selector*/
-                width: 800px;
-            }
-            #BarraLateral{ /*ID Selector*/
-                text-align: right;
-            }
-            h4{ /*Element Selector*/
-                color: black;
-                font-size: 15px;
-            }
-            .TituloArticulos{ /*Class Selector*/
-                color: darkslateblue;
-                font-size: 20px;
-            }
-            header li{      
-                list-style: none;
-                display:inline-block;       /*Quitar las BR de las listas*/
-            }
-            a:link, a:visited{          /*Pseudo-Class*/
-                text-decoration: none;
-                background-color: green;
-                border: 2px solid blue;
-                color: black;
-                display: block;
-                width: 150px;
-                text-align: center;
-                margin-bottom: 1px;
-            }
-            a:hover, a:active{                  /*Pseudo-Class*/
-                background-color: red;
-                color: purple
-            }
-            header li:nth-child(2){             /*Pseudo-Class*/
-                font-size: 20px;
-            }
-            header li:nth-child(3):hover{      /*Pseudo-Class*/
-                font-size: 30px;
-            }
-
-
-/* Selectors
-Asi podemos elegir dos o mas atributos que modificar a la vez 
-            h3, .TituloArticulos, #Contenido{
-                color: yellow;
-            }
-/*Combinando elementos
-            p.big{                  Esto significa todos los parrafos con la clase big. Recordamos que la clase se puede aplicar a multitud de cosas: div, p, section,etc:
-                font-size: 20px;
-            }
-            <p class="big">      </p>
-            ...
-            <div class="big">    </div>
-        ______________    
-            article > p{            Cada parrafo que es hijo DIRECTO de un articulo. Ejemplo2: article > .colored{}
-                color: blue;
-            }
-            <article>
-            <p>   AFECTADO   </p>
-            </article>
-            ...
-            <article>
-            <div><p>   NO AFECTADO   </p></div>
-            </article>
-        ______________
-            article p {             Cada parrafo hijo de un articulo, directo o indirecto: Ejemplo2: .colored p{}
-                color: blue;
-            }
-            <article>
-            <div><p>   AFECTADO   </p></div>
-            </article>
-Pseudo-Class Selectors
-            :link           Link sin visitar
-            :visited        Link visitado
-            :hover          (Flotar) Poner el cursor encima
-            :active         Clica pero no suelta el clic
-            :nth-child()    Sirve para enlazar. Lecture15
-*/
-
-        </style>
+        <link rel="stylesheet" href="style.css">        <!--Rel indica la relacion entre las paginas, en este caso stylesheet-->
     </head>
     <body>
         <h1 id="Encabezado">The basics of CSS</h1>
@@ -116,8 +23,8 @@ Pseudo-Class Selectors
             <h3 class="TituloArticulos">History</h3>
             <h4 class="ContenidoArticulos">In 1920, Arthur Eddington suggested hydrogen-helium fusion could be the primary source of stellar energy. Quantum tunneling was discovered by Friedrich Hund in 1929, and shortly afterwards Robert Atkinson and Fritz Houtermans used the measured masses of light elements to show that large amounts of energy could be released by fusing small nuclei. Building on the early experiments in nuclear transmutation by Ernest Rutherford, laboratory fusion of hydrogen isotopes was accomplished by Mark Oliphant in 1932. In the remainder of that decade, the theory of the main cycle of nuclear fusion in stars was worked out by Hans Bethe. Research into fusion for military purposes began in the early 1940s as part of the Manhattan Project. Fusion was accomplished in 1951 with the Greenhouse Item nuclear test. Nuclear fusion on a large scale in an explosion was first carried out on 1 November 1952, in the Ivy Mike hydrogen bomb test.</h4>
             <h3 class="TituloArticulos">Process</h3>
-            <h4 class="ContenidoArticulos">The release of energy with the fusion of light elements is due to the interplay of two opposing forces: the nuclear force, which combines together protons and neutrons, and the Coulomb force, which causes protons to repel each other. Protons are positively charged and repel each other by the Coulomb force, but they can nonetheless stick together, demonstrating the existence of another, short-range, force referred to as nuclear attraction.[2] Light nuclei (or nuclei smaller than iron and nickel) are sufficiently small and proton-poor allowing the nuclear force to overcome repulsion. This is because the nucleus is sufficiently small that all nucleons feel the short-range attractive force at least as strongly as they feel the infinite-range Coulomb repulsion. Building up nuclei from lighter nuclei by fusion releases the extra energy from the net attraction of particles. For larger nuclei, however, no energy is released, since the nuclear force is short-range and cannot continue to act across longer nuclear length scales. Thus, energy is not released with the fusion of such nuclei; instead, energy is required as input for such processes. Fusion powers stars and produces virtually all elements in a process called nucleosynthesis. The Sun is a main-sequence star, and, as such, generates its energy by nuclear fusion of hydrogen nuclei into helium. In its core, the Sun fuses 620 million metric tons of hydrogen and makes 616 million metric tons of helium each second. The fusion of lighter elements in stars releases energy and the mass that always accompanies it. For example, in the fusion of two hydrogen nuclei to form helium, 0.645% of the mass is carried away in the form of kinetic energy of an alpha particle or other forms of energy, such as electromagnetic radiation.[3] It takes considerable energy to force nuclei to fuse, even those of the lightest element, hydrogen. When accelerated to high enough speeds, nuclei can overcome this electrostatic repulsion and be brought close enough such that the attractive nuclear force is greater than the repulsive Coulomb force. The strong force grows rapidly once the nuclei are close enough, and the fusing nucleons can essentially "fall" into each other and the result is fusion and net energy produced. The fusion of lighter nuclei, which creates a heavier nucleus and often a free neutron or proton, generally releases more energy than it takes to force the nuclei together; this is an exothermic process that can produce self-sustaining reactions. Energy released in most nuclear reactions is much larger than in chemical reactions, because the binding energy that holds a nucleus together is greater than the energy that holds electrons to a nucleus. For example, the ionization energy gained by adding an electron to a hydrogen nucleus is 13.6 eV—less than one-millionth of the 17.6 MeV released in the deuterium–tritium (D–T) reaction shown in the adjacent diagram. Fusion reactions have an energy density many times greater than nuclear fission; the reactions produce far greater energy per unit of mass even though individual fission reactions are generally much more energetic than individual fusion ones, which are themselves millions of times more energetic than chemical reactions. Only direct conversion of mass into energy, such as that caused by the annihilatory collision of matter and antimatter, is more energetic per unit of mass than nuclear fusion. (The complete conversion of one gram of matter would release 9×1013 joules of energy.) Research into using fusion for the production of electricity has been pursued for over 60 years. Although controlled fusion is generally manageable with current technology (e.g. fusors), successful accomplishment of economic fusion has been stymied by scientific and technological difficulties; nonetheless, important progress has been made. At present, controlled fusion reactions have been unable to produce break-even (self-sustaining) controlled fusion.[4] The two most advanced approaches for it are magnetic confinement (toroid designs) and inertial confinement (laser designs). Workable designs for a toroidal reactor that theoretically will deliver ten times more fusion energy than the amount needed to heat plasma to the required temperatures are in development (see ITER). The ITER facility is expected to finish its construction phase in 2025. It will start commissioning the reactor that same year and initiate plasma experiments in 2025, but is not expected to begin full deuterium-tritium fusion until 2035.[5] Similarly, Canadian-based General Fusion, which is developing a magnetized target fusion nuclear energy system, aims to build its demonstration plant by 2025.[6] The US National Ignition Facility, which uses laser-driven inertial confinement fusion, was designed with a goal of break-even fusion; the first large-scale laser target experiments were performed in June 2009 and ignition experiments began in early 2011</h4>
+            <h4 class="ContenidoArticulos">The release of energy with the fusion of light elements is due to the interplay of two opposing forces: the nuclear force, which combines together protons and neutrons, and the Coulomb force, which causes protons to repel each other. Protons are positively charged and repel each other by the Coulomb force, but they can nonetheless stick together, demonstrating the existence of another, short-range, force referred to as nuclear attraction.[2] Light nuclei (or nuclei smaller than iron and nickel) are sufficiently small and proton-poor allowing the nuclear force to overcome repulsion. This is because the nucleus is sufficiently small that all nucleons feel the short-range attractive force at least as strongly as they feel the infinite-range Coulomb repulsion. Building up nuclei from lighter nuclei by fusion releases the extra energy from the net attraction of particles. For larger nuclei, however, no energy is released, since the nuclear force is short-range and cannot continue to act across longer nuclear length scales. Thus, energy is not released with the fusion of such nuclei; instead, energy is required as input for such processes. Fusion powers stars and produces virtually all elements in a process called nucleosynthesis. The Sun is a main-sequence star, and, as such, generates its energy by nuclear fusion of hydrogen nuclei into helium. In its core, the Sun fuses 620 million metric tons of hydrogen and makes 616 million metric tons of helium each second. The fusion of lighter elements in stars releases energy and the mass that always accompanies it. For example, in the fusion of two hydrogen nuclei to form helium, 0.645% of the mass is carried away in the form of kinetic energy of an alpha particle or other forms of energy, such as electromagnetic radiation.[3] It takes considerable energy to force nuclei to fuse, even those of the lightest element, hydrogen. When accelerated to high enough speeds, nuclei can overcome this electrostatic repulsion and be brought close enough such that the attractive nuclear force is greater than the repulsive Coulomb force. The strong force grows rapidly once the nuclei are close enough, and the fusing nucleons can essentially "fall" into each other and the result is fusion and net energy produced. The fusion of lighter nuclei, which creates a heavier nucleus and often a free neutron or proton, generally releases more energy than it takes to force the nuclei together; this is an exothermic process that can produce self-sustaining reactions. Energy released in most nuclear reactions is much larger than in chemical reactions, because the binding energy that holds a nucleus together is greater than the energy that holds electrons to a nucleus. For example, the ionization energy gained by adding an electron to a hydrogen nucleus is 13.6 eV—less than one-millionth of the 17.6 MeV released in the deuterium–tritium (D–T) reaction shown in the adjacent diagram. Fusion reactions have an energy density many times greater than nuclear fission; the reactions produce far greater energy per unit of mass even though individual fission reactions are generally much more energetic than individual fusion ones, which are themselves millions of times more energetic than chemical reactions. Only direct conversion of mass into energy, such as that caused by the annihilatory collision of matter and antimatter, is more energetic per unit of mass than nuclear fusion. (The complete conversion of one gram of matter would release 9×1013 joules of energy.) Research into using fusion for the production of electricity has been pursued for over 60 years. Although controlled fusion is generally manageable with current technology (e.g. fusors), successful accomplishment of economic fusion has been stymied by scientific and technological difficulties; nonetheless, important progress has been made. At present, controlled fusion reactions have been unable to produce break-even (self-sustaining) controlled fusion.[4] The two most advanced approaches for it are magnetic confinement (toroid designs) and inertial confinement (laser designs). Workable designs for a toroidal reactor that theoretically will deliver ten times more fusion energy than the amount needed to heat plasma to the required temperatures are in development (see ITER). The ITER facility is expected to finish its construction phase in 2025. It will start commissioning the reactor that same year and initiate plasma experiments in 2025, but is not expected to begin full deuterium-tritium fusion until 2035.[5] Similarly, Canadian-based General Fusion, which is developing a magnetized target fusion nuclear energy system, aims to build its demonstration plant by 2025.[6] The US National Ignition Facility, which uses laser-driven inertial confinement fusion, was designed with a goal of break-even fusion; the first large-scale laser target experiments were performed in June 2009 and ignition experiments began in early 2011.</h4>
        </section>
-       <footer id="Footer"></footer>
+       <footer id="Footer" style="font-size: 0.5em;">By Incuenssu without &copy;</footer>
     </body>
 </html>

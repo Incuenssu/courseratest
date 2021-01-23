@@ -1,0 +1,138 @@
+/*Se puede aplicar estilos a cualquier cosa del html*/
+/*Seleccionando secciones*/
+    header{
+        color: blue;
+    }
+    body{
+        margin: auto;
+        width: 1000px;
+        border: 3px solid green;
+        padding: 5px;
+    }
+/*Seleccionando el ID*/
+    #Encabezado{ /*ID Selector*/
+        color: blue;
+        font-size: 50px;
+        text-align: center;
+    }
+    #Contenido{ /*ID Selector*/
+        width: 800px;
+    }
+    #BarraLateral{ /*ID Selector*/
+        text-align: right;
+    }
+/*Seleccionando Elementos*/
+    h4{ /*Element Selector*/
+        color: black;
+        font-size: 15px;
+    }
+/*Seleccionando clases*/
+    .TituloArticulos{ /*Class Selector*/
+        color: darkslateblue;
+        font-size: 20px;
+    }
+/*Asi podemos elegir dos o mas atributos que modificar a la vez*/
+    h3, .TituloArticulos, #Contenido{
+        color: yellow;
+    }
+/*Combinando elementos*/
+    /*Esto significa todos los parrafos con la clase big. Recordamos que la clase se      puede aplicar a multitud de cosas: div, p, section,etc*/
+    p.big{
+        font-size: 20px;
+    }
+    /*
+    <p class="big"></p>
+    ...
+    <div class="big"></div>*/
+    /*Cada parrafo que es hijo DIRECTO de un articulo. 
+    Ejemplo2: article > .colored{}
+    Ejemplo3: div > div > li{}*/
+    article > p{   
+        color: blue;         
+    }
+    /*<article>
+    <p>   AFECTADO   </p>
+    </article>
+    ...
+    <article>
+    <div><p>   NO AFECTADO   </p></div>
+    </article>*/
+    /*Cada parrafo hijo de un articulo, directo o indirecto: Ejemplo2: .colored p{}*/
+    article p {    
+        color: blue;         
+    }
+    /*<article>
+    <div><p>   AFECTADO   </p></div>
+    </article>*/
+/*Para quitar los break line de las listas*/ /*Ademas aqui elegimos las listas del Header*/
+    header li{      
+        list-style: none;
+        display:inline-block;
+    }
+/*Pseudo-Class Selectors
+    :link           Link sin visitar
+    :visited        Link visitado
+    :hover          (Flotar) Poner el cursor encima
+    :active         Clica pero no suelta el clic
+    :nth-child()    Sirve para enlazar. Lecture15*/
+    a:link, a:visited{
+        text-decoration: none;
+        background-color: green;
+        border: 2px solid blue;
+        color: black;
+        display: block;
+        width: 150px;
+        text-align: center;
+        margin-bottom: 1px;
+    }
+    a:hover, a:active{
+        background-color: red;
+        color: purple
+    }
+    header li:nth-child(2){         /*Elige el segundo li del header*/
+        font-size: 20px;
+    }
+    header li:nth-child(3):hover{   /*Elige el tercer li y que ocurre cuando se pone el cursor encima*/
+        font-size: 30px;
+    }
+/*Conflictos Lecture 17∫*/
+    /*Last declaration Wins. HTML is proccessed sequentially, top to bottom.*/
+    /*Declarations Merge. Font size and color, when they're targeted to the same element, they will merge to one.*/
+    /*DOM tree:
+            body                Si especifico un cambio CSS en el body, todos los elementos del body se veran afectados
+                element         Si especifico un cambio CSS aqui, solo los que dependen de este se veran afectado
+                    element
+                    element
+                element
+                element               
+                */
+    /*Most specific Selector Combination Wins
+        El mas especifico: estilos dentro de un elemento
+        Mas especifico: ID
+        Menos especifico: Class, pseudo-class, attribute
+        El menos especifico: # of elements
+        Si los colocamos por puntuacion para verlo mas claro:
+            style   ID  class   #   */
+                /*Ejemplo 1:  <h2 style="color: green;">          Puntuacion 1 0 0 0*/
+                /*Ejemplo 2:*/ div p {color: green;}          /*Puntuacion 0 0 0 2*/
+                /*Ejemplo 3:*/ div #myParag {color: green;}   /*Puntuacion 0 1 0 1*/
+                /*Ejemplo 4:*/ div.big p {color: green;}      /*Puntuacion 0 0 1 2*/
+        /*Si ponemos !important detras de una variable, no importara la especifidad, usara la que le hayamos dicho.*/
+            header.navigation p{
+                color: green;
+            }
+            p{
+                color: blue !important;              /*Usara el color azul*/
+            }
+/*Styling text Lecture 18*/
+    /*Lo mejor es poner una cantidad variada de fonts por si no existe alguna en el pc. Y hay preferencias:
+        font-family: Arial, Helvetica, sans-serif;*/
+    /*Se suele usar hexadecimal para los colores
+        color: #0000ff;*/
+    /*Cursiva: font-style: italic;*/
+    /*Negrita: font-weight: bold;*/
+    /*Tamaño del texto siempre en pixeles: font-size: 24px;     El default es 16px*/
+            /*style="font-size: 2em;    Esto nos indica que multiplica por 2 el px que tengamos puesto, es lo mismo que poner 200%. En este ejemplo serian 48px*/
+    /*Para controlar como se ve el texto usamos: text-transform: ;  Por ejemplo todo en mayusculas o mayusculas la primera letra de cada palabra, etc*/
+    /*Alineacion: text-align: center; */
+/**/

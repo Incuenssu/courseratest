@@ -1,0 +1,56 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: auto;
+    width: 1000px;
+    border: 3px solid green;
+    padding: 5px;
+}
+footer{
+    font-weight: bold;
+    text-align: right;
+}
+#Encabezado{
+    color: blue;
+    font-size: 50px;
+    text-align: center;
+}
+#Contenido{
+    width: 800px;
+    text-align: justify;
+}
+#BarraLateral{
+    text-align: right;
+}
+h4{
+    color: black;
+    font-size: 15px;
+}
+.TituloArticulos{
+    color: darkslateblue;
+    font-size: 20px;
+}
+header li{      
+    list-style: none;
+    display:inline-block;
+}
+a:link, a:visited{
+    text-decoration: none;
+    background-color: green;
+    border: 2px solid blue;
+    color: black;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin-bottom: 1px;
+}
+a:hover, a:active{
+    background-color: red;
+    color: purple
+}
+header li:nth-child(2){
+    font-size: 20px;
+}
+header li:nth-child(3):hover{
+    font-size: 30px;
+}
