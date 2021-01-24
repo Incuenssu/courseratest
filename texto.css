@@ -66,8 +66,8 @@
     </article>*/
 /*Para quitar los break line de las listas*/ /*Ademas aqui elegimos las listas del Header*/
     header li{      
-        list-style: none;
-        display:inline-block;
+        list-style: none;           /*Quita los puntos o los numeros*/
+        display:inline-block;       /*Elimina los Break Line*/
     }
 /*Pseudo-Class Selectors
     :link           Link sin visitar
@@ -125,14 +125,159 @@
                 color: blue !important;              /*Usara el color azul*/
             }
 /*Styling text Lecture 18*/
-    /*Lo mejor es poner una cantidad variada de fonts por si no existe alguna en el pc. Y hay preferencias:
-        font-family: Arial, Helvetica, sans-serif;*/
-    /*Se suele usar hexadecimal para los colores
-        color: #0000ff;*/
-    /*Cursiva: font-style: italic;*/
-    /*Negrita: font-weight: bold;*/
-    /*Tamaño del texto siempre en pixeles: font-size: 24px;     El default es 16px*/
-            /*style="font-size: 2em;    Esto nos indica que multiplica por 2 el px que tengamos puesto, es lo mismo que poner 200%. En este ejemplo serian 48px*/
+    /*Lo mejor es poner una cantidad variada de fonts por si no existe alguna en el pc. Y hay preferencias:*/
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    /*Se suele usar hexadecimal para los colores*/
+    *{
+        color: #0000ff;
+    }
+    /*Cursiva:*/ 
+    *{
+        font-style: italic;
+    }
+    /*Negrita:*/ 
+    *{
+        font-weight: bold;
+    }
+    /*Tamaño del texto siempre en pixeles:*/ 
+    *{
+        font-size: 24px;     /*El default es 16px*/
+    }
+    /*Esto nos indica que multiplica por 2 el px que tengamos puesto, es lo mismo que poner 200%. En este ejemplo serian 48px*/
+    *{
+        font-size: 2em;
+    }    
     /*Para controlar como se ve el texto usamos: text-transform: ;  Por ejemplo todo en mayusculas o mayusculas la primera letra de cada palabra, etc*/
-    /*Alineacion: text-align: center; */
-/**/
+    *{
+        text-transform: capitalize;
+    }
+    /*Alineacion:*/ 
+    *{
+        text-align: center;
+    }
+/*Box Model: Lecture 19*/
+    /*Son varias cajas, de externo a interno serian:
+        Margin
+            margin: 20px 20px 20px 0px; Empezando desde arriba sentido horario
+        Border
+        Padding
+        Content
+    Cuidado con hacer el box general mas pequeño que el box de texto, que si escribes debajo se va al pedo*/
+        #box{
+            height: 50px;
+        }
+        #content{
+            height: 100px;      /*Si escribimos algo debajo de este contenido, se veran los dos textos uno encima de*/       
+        }
+        /*Para solucionar esto usamos: overflow:*/
+        #box{
+            height: 50px;
+            overflow: visible;      /*Valor por defecto, nos ocurre el problema de arriba*/
+            overflow: hidden;       /*Nos oculta el contenido externo al box*/
+            overflow: auto;         /*Nos dara un scrollbar. Bueno para Terms of Service.*/
+            overflow: scroll;       /*Igual que el auto pero nos dara scrollbar vertical y horizontal siempre*/
+        }
+    /*Box-sizing: Sirve para establecer limites de la caja.*/
+        #box{
+            width: 300px;
+            margin: 20px;
+            border: 10px;
+            padding: 5px;
+        }
+        /*Aqui el largo total es: 300 + 20*2(de cada lado) + 10*2 + 5*2 = 370px de largo total*/
+        #box{
+            width: 300px;
+            margin: 20px;
+            border: 10px;
+            padding: 5px;
+            box-sizing: border-box;             /*Usar siempre esta opcion*/
+        }
+        /*Aqui nos aseguramos que el tamaño total es de 300px. Ajustandose el interior para que en total sume 300px.
+        Si pusiesemos: box-sizing: content-box; Nos aseguramos que el tamaño del contenido sea de 300px, despues habria padding, border y margin. Es el default.*/
+    /*Para evitar tener que hacer box-sizing: border-box en cada {} se puede usar el selector universal:*/
+        *{
+            box-sizing: border-box;
+            margin: 0;                  /*Tambien estaria bien establecer todos los margenes y paddings en 0*/
+            padding: 0;                 /*porque el browser puede elegirlos como el quiera*/
+        }
+        body{
+            color: blue;
+        }
+        a:hover, a:active{
+            color: green;
+        }
+    /*Acumular margenes
+        Se suman los margenes horizontales:
+            -5px-Content-20px- -30px-Content-3px-
+            -5px-Content - 50px - Content-3px-
+        Los margenes superior e inferior no se suman, el mayor es el que gana:
+            Content
+            -20px-
+            -30px-
+            Content
+            Content
+            -30px-
+            Content
+    */
+/*Background Property: Lecture 20*/
+    /*Para añadir una imagen de fondo, tanto URL como local*/
+    *{
+        background-color: blue;
+        background-image: url("photo.jpg");     /*Si la imagen es pequeña para el espacio, por defecto se repetira*/
+        background-repeat: no-repeat;           /*Si no queremos que se repita. Solo pone 1.*/
+        background-position: bottom right;      /*Primero vertical y luego horizontal. Si solo ponemos uno el otro centrado*/
+        background: blue url("photo.jpg") no-repeat bottom right;       /*Todo junto*/
+    }
+/*Positioning elements by floating: Lecture 21*/
+    /*Usamos la propiedad float*/
+    #Navegacion{
+        float: right;
+    }
+    /*Hay que tener cuidado porque lo de debajo colapsa, por lo que debajo hay que decirle que deje de float*/
+    #Contenido{
+        clear: right;           /*Right, Left, Both*/
+    }
+    /*Para hacer por ejemplo una galeria:*/
+    p{
+        float: left;
+    }
+    #p1{
+        width: 300px;
+        height: 300px;
+    }
+    #p2{
+        width: 300px;
+        height: 300px;
+    }
+    #p3{
+        width: 300px;
+        height: 300px;
+        clear: left;            /*Con esto hacemos que deje de flotar la tercera imagen*/
+    }
+    #p4{                        /*Vuelve a flotar y tenemos un 2x2 en forma de galeria*/
+        width: 300px;
+        height: 300px;
+    }
+/*Relative and Absolute Element Position: Lecture 22*/
+    /*Static Position: Normal document Flow. Default for all, except html.Position offsets are ignored*/
+    /*Relative Position: Element is positioned relative to its position in normal document flow. Solo se mueve el relative, los demas elementos no se mueven, dejan el hueco del relative.*/
+    *{
+        position: relative;
+        top: 15px; left: 15px;          /*bottom: 15px; right: 15px;*/
+    }
+        /*Positioning CSS (Offset) propierties are: top, bottom, left, right
+        Element is NOT taken out of normal document flow. Even if moved, its original spot is preserved.
+        Esto quiere decir que no toma los 15px desde las esquinas de la hoja si no desde su posicion en el HTML.
+            Un parrafo a 400px de la esquina superior y a 20px de la izquierda, ocupara la posicion 415px y 35px*/
+        /*Si tomamos valores positivos tomamos la esquina superior izquierda y con negativos tomamos la esquina inferior derecha como puntos de referencia del movimiento*/
+    /*Absolute position: all offsets are relative to the position of the nearest ancestor which has positioning set on it, other than static. Se acomodan todos los elementos por su movimiento, esta "flotando sobre ellos"*/
+    *{
+        position: absolute;
+        top: 15; left: 15px;          /*bottom: 15px; right: 15px;*/
+    }
+        /*Estas coordenadas si tienen en cuenta las esquinas de nuestra web, no de su posicion inicial*/
+        /*By default, html is the only element that has non-static positioning set on it(relative).
+        Element is taken out of normal document flow*/
+
