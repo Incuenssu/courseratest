@@ -7,7 +7,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin: auto;
-    /*width: 1000px;*/
     background-color: #EFEFEF;
     color: #565656;
 }
@@ -25,12 +24,10 @@ footer{
     text-align: center;
 }
 #BarraLateral{
-    border: 3px solid green;
-    box-sizing: border-box;
     width: 15%;
     float: right;
     position: sticky;
-    top: 0;
+    top: 10px;
 }
 nav li{
     list-style: none;
@@ -40,7 +37,6 @@ nav li{
     clear: left;
     width: 85%;
     text-align: justify;
-    border: 3px solid blue;
     margin: 0px;
     padding: 0px 10px 10px 0px;
 }
