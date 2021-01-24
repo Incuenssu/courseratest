@@ -85,3 +85,45 @@ nav li:nth-child(2){
 nav li:nth-child(3):hover{
     font-style: italic;
 }
+#columns p{
+    width: 8.33%;
+    height: 50px;
+    border: 1px solid black;
+    float: left;
+  }
+  #p1 {
+    background-color: #0e1a40;
+  }
+  #p2 {
+    background-color: #5d5d5d;
+  }
+  #p3 {
+    background-color: #946b2d;
+  }
+  #p4 {
+    background-color: #0e1a40;
+  }
+  #p5 {
+    background-color: #5d5d5d;
+  }
+  #p6 {
+    background-color: #946b2d;
+  }
+  #p7 {
+    background-color: #0e1a40;
+  }
+  #p8 {
+    background-color: #5d5d5d;
+  }
+  #p9 {
+    background-color: #946b2d;
+  }
+  #p10 {
+    background-color: #0e1a40;
+  }
+  #p11 {
+    background-color: #5d5d5d;
+  }
+  #p12 {
+    background-color: #946b2d;
+  }
