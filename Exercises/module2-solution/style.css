@@ -1,0 +1,68 @@
+/********** Base styles **********/
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Times New Roman', Georgia, Garamond;
+  }
+h1{
+    text-align: center;
+    margin: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}
+h2{
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    float: right;
+    width: 100px;
+    font-family: monospace, serif;
+    font-size: larger;
+}
+p{
+    clear: right;
+    padding: 10px;
+}
+#chicken{
+    background-color: pink;
+  }
+#beef{
+      background-color: red;
+      color:white;
+  }
+#sushi{
+      background-color: yellow;
+  }
+section{
+    border: 1px solid black;
+    background-color: gray;
+}
+/********** Desktop devices **********/
+@media (min-width: 992px){
+    .desktop{
+        float: left;
+        margin: 2.08% 4.16% 2.08% 4.16%;
+        width: 25%;
+      }
+      
+}
+/********** Tablet devices **********/
+@media (min-width: 768px) and (max-width: 991px) {
+    .tablet-2, .tablet-1{
+        float: left;
+        margin: 2.08% 4.16% 2.08% 4.16%;
+    }
+      .tablet-2 {
+        width: 41.66%;
+      }
+      .tablet-1 {
+        width: 91.66%;
+      }
+    }
+/********** Phone devices **********/
+@media (max-width: 767px){
+    .phone{
+        margin: 4.16% 8.33% 4.16% 8.33%;
+        width: 83.33%;
+      }
+    }
