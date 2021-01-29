@@ -1,0 +1,75 @@
+Visit with the client
+	General ideas:
+		Most clients have NO IDEA what they want.
+			It's YOUR JOB to ask questions to figure it out.
+			Bring web site examples of similar businesses.
+		Less (information) is more: If all is important, nothing is important.
+			Encourage yout client not to cram information on the site.
+		Find a way for the client to INVEST in the project.
+			Especially true if you're doing this for free just to build up your portfolio.
+				E.g., have them commit to pay for product photography.
+		Have client designate ONE PERSON responsible for decisions.
+		Limit number of revisions UPFRONT.
+			If it's a paying job, limit number of FREE revisions.
+		Google for "web development client questionnaire".
+		Involve others if needed.
+			Contact a local college and see if a graphic design student wants to join you bay providing free design services.
+			Same for photography, if your site needs one.
+		Get an idea of what the client has right now.
+			Website, facebook, etc. for example on GoogleMaps.
+
+Start a server to see the changes in my web:
+browser-sync start --server --directory --files "*"
+
+	jumbotron in Bootstrap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
