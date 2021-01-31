@@ -1,6 +1,152 @@
 body{
     font-size: 16px;
     color: #fff;
-    background-color: #186A3B;
+    background-color: #DC7633;
     font-family: 'Happy Monkey', cursive;
+}
+
+/** HEADER **/
+#header-nav{
+    background-color: #B01BC3;
+    border-radius: 0;
+    border: 0;
+}
+
+#logo-img{
+    background: url('../resources/logo.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 10 px 15px 10px 0;
+}
+
+.navbar-brand{
+    padding-top: 25px;
+}
+.navbar-brand h1{       /*Restaurant Name*/
+    font-family: 'Yusei Magic', sans-serif;
+    color: #28B463;
+    font-size: 1.75em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 15px;
+    line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus{
+    text-decoration: none;      /*No tiene la linea subrayadora de debajo del link*/
+}
+.navbar-brand p{        /*ISO Cert*/
+    color: #CB4335;
+    text-transform: uppercase;
+    font-size: .7em;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.navbar-brand p span{   /*ISO-Logo*/
+    vertical-align: middle;
+}
+/*Iconos superiores*/
+#nav-list {
+    margin-top: 10px;
+  }
+  #nav-list a {
+    color: #EDBB99;
+    text-align: center;
+  }
+  #nav-list a:hover {
+    background: #E7E7E7;
+    color: #17202A;
+  }
+  #nav-list a span {
+    font-size: 1.2em;
+  }
+  #phone {
+    margin-top: 5px;
+  }
+  #phone a { /* Phone number */
+    text-align: right;
+    padding-bottom: 0;
+  }
+  #phone div { /* We Deliver */
+    color: #EDBB99;
+    text-align: right;
+    padding-right: 15px;
+  }
+  .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+    border: 1px solid #EDBB99;
+  }
+  /*Para tener un margen de color solo para el nombre del restaurante*/
+  .navbar-header button.navbar-toggle {
+    clear: both;
+    margin-top: -30px;
+  }
+  /** END HEADER **/
+
+/********** Large devices only **********/
+    @media (min-width: 1200px) {
+
+    }
+/********** Medium devices only **********/
+    @media (min-width: 992px) and (max-width: 1199px) {
+  #logo-img {
+    background: url('../resources/logomed.png') no-repeat;      /*El Logo es mas pequeño*/
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px 5px 0;
+  }
+}
+/********** Small devices only **********/
+    @media (min-width: 768px) and (max-width: 991px) {
+    .navbar-brand p img { /* ISO image*/
+        height: 20px;
+        width: 20px;
+        }
+    .navbar-brand p { /* ISO cert */
+        font-size: .6em;
+        margin-top: 12px;
+        }
+    }
+/********** Extra small devices only **********/
+    @media (max-width: 767px) {
+  /* Header */
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 10px;
+    font-size: 7vw; /* 1vw = 1% of viewport width */
+  }
+  .navbar-brand p { /* ISO cert */
+    font-size: .6em;
+    margin-top: 12px;
+  }
+  .navbar-brand p img { /* ISO image*/
+    height: 17px;
+    width: 16px;
+  }
+  #collapsable-nav a { /* Collapsed nav menu text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span { /* Collapsed nav menu glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+  #call-btn > a {
+    font-size: 1.5em;
+    display: block;
+    margin: 0 20px;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: #B01BC3;
+    color: #28B463;
+  }
+  #xs-deliver {
+    margin-top: 5px;
+    font-size: .7em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
 }

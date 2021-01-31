@@ -4,15 +4,75 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bar de Moe</title>
+    <title>Moe's Tavern</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
 
   </head>
 <body>
-    
-    
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">   <!--Los nombres son de bootstrap-->
+        <div class="container">   <!--Otro es fluid-container-->
+          <div class="navbar-header">
+            <a href="index.html" class="pull-left visible-md visible-lg">   <!--pull-left para que flote a la izquierda el logo-->
+              <div id="logo-img" alt="Logo image"></div>
+            </a>
+            <!--Logo, nombre de la empresa y certificado con logo-->
+            <div class="navbar-brand">
+              <a href="index.html"><h1>Moe's Tavern</h1></a>
+              <p>
+                <img src="resources/ISO.png" alt="ISO Certified" width="25px" height="25px">
+                <span>ISO not certified</span>
+              </p>
+            </div>
+            <!--Boton de menu que se colapsa-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                                                                                          <!--El hashtag de collapsable-nav enlaza con el id de abajo-->
+              <span class="sr-only">Toggle navigation</span>    <!--No se leera el Toggle navigation. Es Screen-only-->
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!--Iconos para ir a otras paginas-->
+          <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+             <li>
+               <a href="menu-categories.html">
+                 <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a> <!--Esta clase nos hace que podamos introducir simbolos, iconos, etc-->
+             </li>
+             <li>
+               <a href="#">
+                 <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
+             </li>
+             <li>
+               <a href="#">
+                 <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Awards</a>
+             </li>
+             <li id="phone" class="hidden-xs">
+               <a href="tel:555-000-1111">    <!--Si pinchas te lleva a llamar por telefono directamente. En un movil por ejemplo-->
+                 <span>555-000-1111</span></a><div>* We Deliver</div>
+             </li>
+           </ul><!-- #nav-list -->
+         </div><!-- .collapse .navbar-collapse -->
+
+
+        </div>
+      </nav>
+    </header>
+    <div id="call-btn" class="visible-xs">
+      <a class="btn" href="tel:555-000-1111">
+      <span class="glyphicon glyphicon-earphone"></span>
+      555-000-1111
+      </a>
+    </div>
+    <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
+
+
+  <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>
 </body>
