@@ -83,41 +83,41 @@ body{
 /** END HEADER **/
 
 /* HOME PAGE */
-.container .jumbotron{
-    box-shadow: 0 0 50px #3f0c1f;
-    Border: 2px solid #3f0c1f;
-}
-#menu-tile, #specials-tile, #map-tile{
-    height: 250px;      /*Cambiamos el tamaño del div, es decir, las palabras menu, specials y map*/
-    width: 100%;
-    margin-bottom: 15px;
-    position: relative;
-    border: 2px solid #3f0c1f;
-    overflow: hidden;
-}
-#menu-tile:hover, #specials-tile:hover, #map-tile:hover{
-    box-shadow: 0 1px 5px 1px #cccccc;
-}
-#menu-tile{
-    background: url(../resources/menu.jpg) no-repeat #424949;
-    background-position: center;
-}
-#specials-tile{
-    background: url(../resources/people.jpg) no-repeat;
-    background-position: center;
-}
-#menu-tile span, #specials-tile span, #map-tile span{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 1.6em;
-    text-transform: uppercase;
-    background-color: #000;
-    color: #fff;
-    opacity: .7;
-}
+    .container .jumbotron{
+        box-shadow: 0 0 50px #3f0c1f;
+        Border: 2px solid #3f0c1f;
+    }
+    #menu-tile, #specials-tile, #map-tile{
+        height: 250px;      /*Cambiamos el tamaño del div, es decir, las palabras menu, specials y map*/
+        width: 100%;
+        margin-bottom: 15px;
+        position: relative;
+        border: 2px solid #3f0c1f;
+        overflow: hidden;
+    }
+    #menu-tile:hover, #specials-tile:hover, #map-tile:hover{
+        box-shadow: 0 1px 5px 1px #cccccc;
+    }
+    #menu-tile{
+        background: url(../resources/menu.jpg) no-repeat #424949;
+        background-position: center;
+    }
+    #specials-tile{
+        background: url(../resources/people.jpg) no-repeat;
+        background-position: center;
+    }
+    #menu-tile span, #specials-tile span, #map-tile span{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1.6em;
+        text-transform: uppercase;
+        background-color: #000;
+        color: #fff;
+        opacity: .7;
+    }
 /* END HOME PAGE */
 
 /* FOOTER */
@@ -152,7 +152,87 @@ body{
     text-decoration: none; 
     color: #fff;
   }
-  /* END FOOTER */
+/* END FOOTER */
+
+/* MENU CATEGORIES PAGE */
+    .category-tile { 
+        position: relative;
+        border: 2px solid #3F0C1F;
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 15px;
+    }
+    .category-tile span {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        background-color: #000;
+        color: #fff;
+        opacity: .7;
+    }
+    .category-tile:hover {
+        box-shadow: 0 1px 5px 1px #cccccc;
+    }
+    #menu-categories-title + div {
+        margin-bottom: 50px;
+    }
+/* END MENU CATEGORIES PAGE */
+
+/* SINGLE CATEGORY PAGE */
+    .menu-item-tile {
+        margin-bottom: 25px;
+    }
+    .menu-item-tile hr {
+        width: 80%;
+    }
+    .menu-item-tile .menu-item-price {
+        font-size: 1.1em;
+        text-align: right;
+        margin-top: -15px;
+        margin-right: -15px;
+        color: #212F3D;
+    }
+    .menu-item-tile .menu-item-price span {
+        font-size: .6em;
+    }
+    .menu-item-photo {
+        position: relative;
+        border: 2px solid #3F0C1F; 
+        overflow: hidden;
+        padding: 0;
+        margin-right: -15px;
+        margin-left: auto;
+        margin-bottom: 20px;
+        max-width: 250px;
+    }
+    .menu-item-photo div {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        background-color: #28B463;
+        text-align: center;
+        color: #B01BC3;
+    }
+    .menu-item-description {
+        padding-right: 30px;
+        color: #212F3D;
+    }
+    h3.menu-item-title {
+        margin: 0 0 10px;
+    }
+    .menu-item-details {
+        font-size: .9em;
+        font-style: italic;
+    }
+/* END SINGLE CATEGORY PAGE */
+
+
 
 /********** Large devices only **********/
     @media (min-width: 1200px) {
@@ -250,6 +330,15 @@ body{
         width: 360px;
         margin: 0 auto 15px;
     }
+    .menu-item-photo{
+        margin-right: auto;
+    }
+    .menu-item-tile .menu-item-price{
+        text-align: center;
+    }
+    .menu-item-description{
+        text-align: center;
+    }
     /* End Home Page */
 
     /* Footer */
@@ -281,4 +370,12 @@ body{
         margin: 0 auto 15px;
     }
     /* End Home Page */
+    .col-xxs-12{        /*Esta categoria no esta creada en Bootstrap, la hacemos manualmente*/
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        float: left;
+        width: 100%;
+    }
   }
