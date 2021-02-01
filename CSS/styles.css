@@ -1,0 +1,18 @@
+.row{
+    margin: 0;
+}
+.card-title{
+    text-align: center;
+}
+.card-img-top{
+    border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+}
+.card{
+    border: 4px solid rgba(0, 0, 0, 0.2);
+}
+.col{
+    margin-bottom: 25px;
+}
+#sabiduria{
+    padding-top: 25px;
+}
