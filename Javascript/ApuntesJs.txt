@@ -1,0 +1,105 @@
+Variables
+	Empieza siempre por "var"
+		var message = "Hello World";
+		var palabra = "1";
+	No se declaran tipos en Javascript: Int, String, float, etc.
+		Es por eso que se le llama dinamic typed language
+		Same variable can hold different types during the life of the execution
+
+Funciones
+	Estructura:
+		function NAME () {}
+		var NAME = function () {}
+	Tambien se puede definir una funcion como variable, es lo mismo escribir:
+			function a () {}
+		que escribir
+			var a = function () {}		Aqui no se pone el name
+	Para invocar una funcion:
+		NAME();
+		a();
+	Arguments/parametros:
+		function compare (x, y){
+		return x>y;
+		}
+	JS permite hacer lo siguiente:
+		function compare (x, y) {}; 	Tenemos la funcion comparar x e y
+		var a = compare (4, 5);			Comparamos 4 y 5 y lo guardamos en a
+		compare (4, "a");				Comparamos 4 y a, que es el resultado de comparar 4 y 5
+		compare();						No comparamos nada, pero la sintaxis es correcta
+
+Scope
+	Global
+		Variables and function defined here are available everywhere
+	Function (aka lexical)
+		Variables and function defined here are available only within this function
+	Scope Chain:
+		Everything is executed in an Execution Context
+		Function invocation creates a new Execution Context
+		Each Execution Context has:
+			Its own Variable Environment
+			Special "this" object
+			Reference to its Outer Environment
+		Global scope does not have an Outer Environment as it's the most outer there is
+		How it works Scope Chain:
+			Referenced (not defined) variable will be searched for in its corrent scope first.
+			If not found, the Outer Reference will be searched.
+			if not found, the Outer Reference's Outer Reference will be searched.
+			Etc
+			This will keep going the Global scope.
+			If not foun in GLobal scope, the variable is undefined.
+		Example:
+			Global
+				var x = 2;
+				A();
+			Function A
+				var x = 5;
+				B();
+			Function B
+				console.log(x);
+			The result printed is 2 porque la funcion B esta siendo llamada desde el Global, si fuese llamada(desde el inicio) en A, entonces el resultado seria 5.
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
