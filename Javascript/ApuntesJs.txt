@@ -211,6 +211,97 @@ Handling default values
     		usa 1
     	Es decir, utiliza SIEMPRE EL PRIMER TRUE
 
+Objects
+	Creation:
+		var companey = new Object();
+	Aunque no exista el metodo del objeto, JS lo crea:
+		company.name = "Facebook"		Suponiendo que "name" no exista como metodo en el objeto
+		Console.log(company)		Resultado: name: "Facebook"
+									Es decir, no da error porque usemos un metodo que no existe
+		Pero ojo con los puntos, que no autocrea los metodos
+		company.ceo.firstname = "Mark"
+		console.log(company)		Resultado: error
+		company.ceo = new Object()
+		company.ceo.firstname = "Mark"
+		company["lastname"] = "Zuckenberg"
+		var adress = "Valley of the death"
+		company[adress] = 112
+		console.log(company)		Resultado: name: "Facebook", ceo: Object {firstname: "Mark"} 
+		Enlace:
+		console.log(company.ceo.fistname)		Resultado: Mark
+		console.log(company["name"])			Resultado: Facebook
+	Simplificacion de creacion de objetos:
+		Es mejor hacerlo con llaves:
+			var facebook = {
+        		name: "Facebook",
+        		ceo: {
+            		firstname: "Mark",
+            		lastname: "Zuckenberg",
+            		color: "blue"
+        		},
+        		"Stock of company": 110
+    		}
+    		OJO con las comas que son necesarias
+    		console.log(facebook.ceo.firstname)		Resultado: Mark
+
+Functions 			CORE FEATURE
+	Functions in JS are objetcts
+		function multiply(x, y){
+    	    return x*y
+    	}
+    Podemos asignarles metodos:
+    	multiply.version = "v1.0.0"
+    	console.log(multiply.version)		Resultado: v1.0.0
+    Function factory
+    	Se pueden enlazar funciones unas con otras y crear unas dentro de otras:
+    		function makemultiplier(multiplier){
+		        var myFunc = function(x){
+		            return multiplier * x;
+		        };
+		        return myFunc
+		    }
+		    var multiplyby3 = makemultiplier(3)
+		    console.log(multiplyby3(10))
+		    var doubleAll = makemultiplier(2)
+		    console.log(doubleAll(100))
+	Pasing functions as arguments
+		Se pueden usar funciones como parametros
+			function doOperationOn(x, operation){
+		        return operation(x)
+		    }
+		    var result = doOperationOn(5, multiplyby3)
+		    console.log(result)
+
+Passing variable by value vs by reference
+	Given b=a, passing/copying by VALUE means changing copied value in b DOES NOT AFFECT the value stored in a and visaversa
+		Copiar/pasar el valor significa que el cambio en B no afecta a que cambie A y viceversa
+	Given b=a, passing/copying by REFERENCE means changin copied value in b DOES AFFECT the value stored in a and visaversa
+		Copiar/pasar la referencia significa que el cambio en B  afecta a que cambie A y viceversa
+	In JS, primitives are passed by value, objects are passed by reference
+		PRIMITIVES -> VALUE
+		OBJECTS -> REFERENCE
+ ->	"Under the hood", everything is actually passed by value.
+ 		The way of the objects  and primitives are stored in memory
+ 			Examples:
+ 				Primitives:
+ 					var a = 7
+ 					var b = a
+ 					Memory:		Diferentes memorias
+ 						a --> 7
+ 						b --> 7
+ 					b = 5
+ 					Memory:		No hay sobreescritura de memorias. VALUE
+ 						a --> 7
+ 						b --> 5
+ 				Objects
+ 					var a = {x:7}
+ 					var b = a 	Ahora B copia a A pero no su valor, si no hacia adonde apunta A
+ 					Memory 		Ambos apuntan a la misma memoria. REFERENCE
+ 						a --> 7 <-- b
+ 					b.x = 5
+ 					Memory 		b sobreescribe a la memoria a la que apunta, por lo que tambien sobreescribe la de a
+ 						a --> 5 <-- b
+ 				In both of them, b ends up with the same value as a
 
 
 

@@ -113,3 +113,103 @@
     orderCHickeWith("noodles")      //Chicken with noodles
     orderCHickeWith()               //Chicken with whatever!
     var x = 10;*/
+
+//Objetos
+/*    var company = new Object();
+    company.name = "Facebook"
+    company.ceo = new Object()
+    company.ceo.firstname = " Mark"
+    company.ceo.color = "blue"
+
+    console.log(company)
+    console.log(company.ceo.color)
+
+    console.log(company["name"])
+    var stockPropName = "Stock of company"
+    company[stockPropName] = 110
+    console.log(company)
+    console.log("Stock price is " + company[stockPropName])*/
+    //Better way: object literal
+/*    var facebook = {
+        name: "Facebook",
+        ceo: {
+            firstname: "Mark",
+            lastname: "Zuckenberg",
+            color: "blue"
+        },
+        "Stock of company": 110
+    }
+    console.log(facebook)
+    console.log(facebook.ceo.firstname)*/
+
+//Funciones
+/*    function multiply(x, y){
+        return x*y
+    }
+    multiply.version = "v1.0.0"
+    console.log(multiply.version)
+    //Factorizacion de funciones
+    function makemultiplier(multiplier){
+        var myFunc = function(x){
+            return multiplier * x;
+        };
+        return myFunc
+    }
+    var multiplyby3 = makemultiplier(3)
+    console.log(multiplyby3(10))
+    var doubleAll = makemultiplier(2)
+    console.log(doubleAll(100))
+    //Parando funciones como parametros
+    function doOperationOn(x, operation){
+        return operation(x)
+    }
+    var result = doOperationOn(5, multiplyby3)
+    console.log(result)
+    result = doOperationOn(100, doubleAll)
+    console.log(result)*/
+
+//Pasando variables por valor o por referencia
+/*    //Passing by VALUE
+    var a = 7
+    var b = a
+    console.log("a: " + a)
+    console.log("b: " + b)
+    b = 5
+    console.log("After b update:")
+    console.log("a: " + a)
+    console.log("b: " + b)
+    //Passsing by REFERENCE
+    var a = { x: 7}
+    var b = a
+    console.log(a)
+    console.log(b)
+    b.x=5
+    console.log("After b update:")
+    console.log(a)
+    console.log(b)*/
+    //Pass by reference vs by value part 1
+    function changePrimitive(primValue){
+        console.log("in changePrimitive...")
+        console.log("valor original:")
+        console.log(primValue)
+        primValue = 5
+        console.log("cambio:")
+        console.log(primValue)
+    }
+    var value = 7
+    changePrimitive(7)      //In memory: primValue = value
+    console.log("valor final:")
+    console.log(value)      //Here are pointing in different memories. Por eso no cambia el valor de primValue y de value
+    //Pass by reference vs by value part 2
+    function changeObject(objValue){
+        console.log("in changeObject...")
+        console.log("valor original:")
+        console.log(objValue)
+        objValue.x = 5
+        console.log("cambio:")
+        console.log(objValue)
+    }
+    value = {x : 7}
+    changeObject(value)     //In memory: objValue = value
+    console.log("valor final:")
+    console.log(value)      //Here are pointing to the same memory. Por eso SI cambia el valor de objValue y de value
