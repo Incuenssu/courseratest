@@ -188,7 +188,7 @@
     console.log(a)
     console.log(b)*/
     //Pass by reference vs by value part 1
-    function changePrimitive(primValue){
+/*    function changePrimitive(primValue){
         console.log("in changePrimitive...")
         console.log("valor original:")
         console.log(primValue)
@@ -212,4 +212,108 @@
     value = {x : 7}
     changeObject(value)     //In memory: objValue = value
     console.log("valor final:")
-    console.log(value)      //Here are pointing to the same memory. Por eso SI cambia el valor de objValue y de value
+    console.log(value)      //Here are pointing to the same memory. Por eso SI cambia el valor de objValue y de value*/
+
+//Constructor de la funcion, prototipo y keyword "this"
+/*    function Circle(radius){
+        this.radius = radius
+        this.getArea = function (){         //Esta funcion aparece en la carga aunque no se use
+                            return Math.PI * Math.pow(this.radius, 2)
+                        }
+    }
+    var myCircle = new Circle(10) // = new Object()
+    console.log(myCircle)
+    //Para evitar que una funcion se cargue completamente una y otra vez al ir creando objetos, se usa Prototype:
+    function Circle2(radius){
+        this.radius = radius
+    }
+    Circle2.prototype.getArea = 
+        function () {                       //Esta funcion ahora aparece en la zona de "__proto__", no se carga siempre
+            Math.PI * Math.pow(this.radius, 2)
+        }
+    var myOtherCicle = new Circle2(10)
+    console.log(myOtherCicle)*/
+
+//Object literals and "this". En principio explica un BUG pero deberia estar fixeado. HAY QUE INVESTIGAR
+/*    var literalCircle = {       //new Object()
+        radius: 10,
+        getArea:    function(){
+                        var self = this             //Hay que poner esto para que se actualice el "radius" de la funcion
+                        console.log(this)
+                        var increaseRadius =    function () {
+                                                    self.radius = 20
+                                                }
+                        increaseRadius()            //(Si no esta puesta var self = this) Aunque hagamos este incremento, lo que cambia es el valor global de "radius" pero no el del "radius" de esta funcion
+                        console.log(this.radius)
+                        return Math.PI * Math.pow(this.radius, 2)
+                    }
+    }
+    console.log(literalCircle.getArea())*/
+
+//Arrays
+/*    var array = new Array()
+    array[0]= "Mike"
+    array[1] = 2
+    array[2] = function (name){
+        console.log("Hello " + name)
+    }
+    array[3] = {course: "HTML, CSS and JS"}
+
+    console.log(array)
+    console.log(array[1])
+    array[2]("Jose Luis")
+    array[2](array[0])
+    console.log(array[3].course)*/
+    //Short hand array creation
+    /*var names = [
+        "Mike", 
+        "Filipino", 
+        "Pepe"]
+    console.log(names)
+    for(var i = 0; i < names.length; i++)[
+        console.log("Hello to " + names[i])
+    ]
+    names[100] = "Jim"
+    for(var i = 0; i < names.length; i++)[
+        console.log("Hello to " + names[i])
+    ]*/
+    //Bucle FOR con array
+/*    var names = ["Mike", "Filipino", "Pepe"]
+    var myObj = {
+        name: "Mike",
+        course: "HTML, CSS and JS",
+        platform: "Coursera"
+    }
+    for (var prop in myObj){
+        console.log(prop + ": " + myObj[prop])
+    }
+    for (var name in names){
+        console.log("Hello: " + names[name])
+    }
+    names.greeting = "Hi: "
+    for (var name in names){
+        console.log("Hello: " + names[name])
+        console.log(names.greeting + names[name])
+    }*/
+    
+//Closures
+/*    function makeMultiplier(multiplier) {
+        //var multiplier = 2    es lo mismo que cuando mas adelante escribimos      var doubleAll = makeMultiplier(2)
+        function b(){
+            console.log("multiplier is: " + multiplier)
+        }
+        b()
+        return (
+            function(x){        //En esta parte igualamos esta funcion a doubleALL por lo que x = 10
+                return multiplier * x
+            }
+        )       
+    }
+    var doubleAll = makeMultiplier(2)       //Por lo que makeMultiplier se ejecuta aqui y no se vuelve a ejecutar
+    console.log(doubleAll(10))              //Aqui se ejecuta la funcion(x) pero no se ejecuta makeMultiplier
+        //Esto es debido a las closures de JS, ya que mantiene en memoria las funciones, no ejecutandose, en Stand By*/
+
+//Immediately Invoked Function Expression. IIFE
+    (function a() { console.log("Hello") })()
+    
+    
