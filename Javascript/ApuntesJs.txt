@@ -478,6 +478,198 @@ Immediately Invoked Function Expression. IIFE
 				Hello John
 				Hi Mike
 
+DOM manipulation
+	Llamada desde el HTML
+		<script src="js/script.js"></script>
+		</body>
+		 casi SIEMPRE al final del HTML, pegando al /body
+	Llamada por ID
+		document.getElementbyId("ELID");
+	Podemos guardar el valor de un input del HTML
+        var name = document.getElementById("name").value
+        var message = "Hello " + name + "!"
+    Introducimos esta variable en, por ejemplo, un DIV con ID "content". Aparecerá sin recargar el mensaje, ya que está creado en el HTML.
+        document.getElementById("content").textContent = message
+    Si queremos hacer lo mismo pero además, queremos que sea un "h2"
+        var message = "<h2>Hello " + name + "!</h2>"
+        document.getElementById("content").innerHTML = message
+    Si queremos que cuando escriban algo en especifico pase algo
+        if (name === "student"){
+        	var title += " & algo mas" 				recordamos que title += "algo" es lo mismo que title = title + "algo"
+            //Si usamos "querySelector" estamos llamando a clases e ID como si estuviesemos en CSS
+            document.querySelector("h1").textContent = prueba
+            	Podemos utilizar
+            		querySelector("h1")
+            		querySelector("#title")
+            		querySelector(".clase")
+            		como si trabajasemos con un CSS
+		Entonces si escriben "student" en la caja, cambiara el titulo
+            
+Handling Events
+	Son cosas que pasan cuando se recarga la pagina o cuando el usuario interacciona con la pagina
+	Se asignan en el HTML poniendo "on..."
+		onclick = "sayHello()"
+		onblur = 
+		onkeypress
+		on 
+	Tambien podemos crear eventos desde el archivo de JS, no tiene porque ser desde HTML
+		document.querySelector("button").addEventListener("click", sayHello)
+		Es lo mismo pero escrito de otra forma. Pero es mejor el de arriba porque establecemos un listener
+		document.querySelector("#boton2").onclick = sayHello
+		Estos dos es lo mismo que tener en el HTML
+		<button onclick="sayHello();">
+	Con "this" podemos interactuar con la propia llamada. Solo funciona si llamamos desde el archivo de JS, no desde el onclick del HTML
+		document.querySelector("button").addEventListener("click", sayHello)
+		function sayHello (){
+		this.textContent = "cambio"
+		...
+		}
+	Si ponemos listener no hace falta establecer la llamada del JS al final del HTML
+		<script src="js/script.js"></script>
+		</body>
+		Ya que cargara toda la pagina y se pondra a escuchar
+	Por lo que lo mejor es establecer un evento que se active cuando cargue toda la pagina: HTML, CSS, fotos, etc todo.
+		document.addEventListener("DOMContentLoaded",
+	        function (event){
+	            function sayHello2(event){}
+	            function funcionloquesea(event){}
+	        }
+	    )
+	    Esto es lo mejor porque se pone en el meta (y no al final del body) y queda mas recogido, ordenado y no genera cosas raras al activar eventos sin cargar toda la pagina
+	Para saber los eventos que podemos hacer:
+		developer.mozilla.org/en-US/docs/WeB/API/Event
+
+HTTP Basics
+	HyperText Transfer Protocol
+	Based on request/response stateless protocol. Es decir, cuando hay un request, no importa los request anteriores
+		Client(browser usually) opens connection to server
+		Client sends HTTP request for a resource
+		Server sends HTTP response to the client (usually with the resource of the client)
+		Client closes connection to server
+	Identifiying resources on the web
+		URN: Uniform Resource Name
+			Uniquely identifies resource or name of resource
+			Does not tell us how to get the resource
+			Example, in a platform of a empresa:
+			HTML/CSS/JavaScript/WebDevelopers/Jose/Chohin
+		URI: Uniform Resource Identifier
+			Uniquely identifies resource of location of resource
+			Dos not necessarily tell us how to get the resource
+			Example:
+			/official_web_site/index.html
+		URL: Uniform Resource Locator
+			Form of URI that provides info on how to get resource
+			Example:
+			http://www.mysite.com/official_web_site/index.html
+	Request Structure (GET)
+		GET /index.html?firstName=Jose HTTP/1.1
+		GET 				Method
+		/index.html 		URI String
+		?firstName=Jose 	Query String: name/value pairs separated by &. Example: ?first=Jose&last=Gonzalez
+		HTTP/1.1			HTTP version
+		Es un URI y no un URL porque ya estamos conectados al servidor, por lo que solo necesitamos el URI para hablar con el servidor
+	Methods
+		GET 	
+			Retrieves the resource
+			Data is passed to server as part of the URI. In Example: query string
+		POST
+			Sends data to server in order to be processed
+			The data is sent in the message body
+			Example:
+				POST /index.html HTTP/1.1
+				Host: coursera.org 			Request Header
+				Accept-Charset: utf-8		Request Header
+				firstName = Jose 			Message Body
+				...
+		More methods not covered yet
+	Response Structure
+		HTTP/1.1 200 OK
+			HTTP/1.1 	HTTP version
+			200 		Response Status Code
+			OK 			English phrase describing status code
+		Example:
+			HTTP/1.1 200 OK
+			Date: Tue, 11 Aug 20014 19:00:01 GMT
+			Content-Type: text/html
+			<html> 		Not necesary HTML, it can be: text, XML, JSON
+			<body>
+			<h1>Secret to gaining weight</h1>
+			<p>Develop Coursera courses....</p>
+			</body>
+			</html>
+		Response Status Codes
+			200 OK 							Ok, here is the content you requested
+			404 Not Found 					Server can't find the resource requested
+			403 Forbidden 					Unauthenticated client tried to access a secure resource
+			500 Internal Server Error 		Some unhandled error was raised on the server
+
+Ajax basics
+	Asynchronous Javascript and XML
+	While Ajax started with XML, very few apps use it nowadays
+		Plain test (at times as html) an JSON is used instead
+	Traditional web app flow
+		HTML --Button is pressed, http request sent--> Server --Response: new page--> (new)HTML
+		Even if returned page is 99% identical to original
+	Ajax web app flow
+		HTMl --HTTP request sent by JS--> Server --Response: Small piece of data that's inserted into current page--> (same)HTML
+		Faster response
+			less bandwith(banda ancha), nicer experience for user
+	Synchronous: Execution of one instruction at a time
+		Can't start execution of another instruction until the first instruction finished its execution
+	Asynchronous: Execution of more than one instruction at a time
+		Asynchronous instruction returns right away
+		The actual execution is done in a separate thread or process
+	But if JS is synchronous, how does Ajax work then?
+		Because exists a lot of things happening in the browser:
+			Event Queue <---	JS Engine 	---> HTML rendering
+			webGL 		<---	JS Engine	---> HTTP Requestor
+		JS engine is synchronous
+		HTTP Requestor is asynchronous
+	Ajax process
+			JS Engine 															HTTP Requestor
+				JS code line
+				JS code line 					
+				make Ajax request -----Address JS function response handler------->	
+				JS code line (no espera a que Ajax responda)
+				JS code line
+				Handle server response (callback function) <-----------------------	
+
+Processing JSON
+	JavaScript Object Notation
+	Great format for passing data from server to client & back
+	Caracteristicas
+		Lightweight data-interchange format
+			Simple textual representation of data
+		Easy for humans to read and write
+		Easy for machines to parse and generate
+		Completely independent of any languaje
+	Syntaxis rules
+		Subset of JS object literal syntax... but
+			Property names must be in double quotes
+			String value must be in double quotes
+		Syntax for everything else is exactly like for object literal
+	Example:
+		var jsonString = 
+			' { 								Single quotes is for that
+				"firstName" : "Jose",			All of property names in double quotes
+				"lastName" : "Perez",				String value in double quotes
+				"likesSpanishFood" : false,			boolean value not in quotes
+				"numberOfDisplays" : 2 				number value not in quotes
+			} '
+	Common Misconception
+		JSON is NOT a JS object literal
+		JSON is just a string
+		The syntax of JSON is based on object literal though
+		Need to convert JSON into a JS object
+	Converting JSON to String & back to JSON
+		converts from json string to object
+			var obj = JSON.parse(jsonString);
+		converts from object to json string
+			var str = JSON.stringify(obj);
+			
+
+
+
 
 
 

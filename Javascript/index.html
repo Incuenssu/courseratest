@@ -1,11 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>Lecture 40</h1>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="js/ajax-utils.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/introduccion.js"></script>
+    <script src="js/ajax-json.js"></script>
+    <script src="js/json.js"></script>
+</head>
 
-        <script src="js/texto.js"></script>
-    </body>
+<body>
+    <h1 id="title">Inicio JS y eventos</h1>
+<!--Esto es para introduccion.js-->
+    <p>
+        Say hello to 
+        <input id="name" type="text">
+        <button>
+            Say it!
+        </button>
+    </p>
+    <div id="content"></div>
+    <div id="content2"></div>
+    <p>
+        Handling events 
+        <input id="name2" type="text2">
+        <button id="boton2">
+            Say it!
+        </button>
+    </p>
+    <div id="content3"></div>
+    <!--Aqui acaba introduccion.js-->
+<!--Ajax, ajax.utils.js y la carpeta data que simulara una DB. Asynchronous.
+    Hay que ejecutarlo como si corriese en un servidor, si se intenta ejecutar directamente en Chrome dara error
+    <p>
+        <button id="botonajax">
+            Say Hello To Someone on the Server!
+        </button>
+    </p>
+    <div id="contentajax"></div>
+    Aqui acaba lo del Ajax-->
+<!--JSON. Lecture 58-->
+    <p>
+        <button id="botonjson">
+            Say Something!
+        </button>
+    </p>
+    <div id="contentjson"></div>
+</body>
 </html>
