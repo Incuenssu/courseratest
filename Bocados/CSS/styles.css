@@ -1,0 +1,40 @@
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+/*Inicio barra superior*/
+    .navbar{
+        background-color: #95CAFF;
+    }
+/*Final  barra superior*/
+/*Inicio Carrusel*/
+    .carousel-control-prev, .carousel-control-next {
+      opacity: 0;
+    }
+    .carousel-control-prev:focus, .carousel-control-next:focus {
+      opacity: 0;
+    }
+    .carousel-control-prev:hover, .carousel-control-next:hover{
+        opacity: 0.1;
+    }
+    #carrusel-inicio{
+        margin: 25px 15px 15px 15px;
+    }
+/*Final Carrusel*/
+/*Inicio Menu*/
+    #image-menu {
+        height: 350px;
+    }
+    .card-body {
+        text-align: right;
+        width: 400px; 
+    }
+    .card-title{
+        text-align: center;
+    }
+    #cards{
+        border: 2px solid #000000;
+        background-color: #F0B27A;
+    }
+/*Final Menu*/
